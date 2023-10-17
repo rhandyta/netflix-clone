@@ -16,15 +16,19 @@ import {
   MenuItem,
 } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import ButtonSign from "@/Components/ButtonSign";
+import ButtonSign from "@/Components/Button/ButtonSign";
+import { grey } from "@mui/material/colors";
 
 function Header() {
   return (
-    <Box>
+    <Box sx={{
+      borderBottom: `10px solid ${grey[700]}`,
+    }}>
       <AppBar
         sx={{
           bgcolor: "transparent",
           padding: "25px 20px",
+      position: "absolute"
         }}
         elevation={0}
       >
@@ -125,6 +129,7 @@ function Header() {
           sx={{
             position: "relative",
             zIndex: 1000,
+            mt: "9rem"
           }}
         >
           <Typography
