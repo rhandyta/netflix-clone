@@ -18,12 +18,11 @@ import {
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ButtonSign from "@/Components/Button/ButtonSign";
 import { grey } from "@mui/material/colors";
+import BorderedBottomBox from "@/Components/Wrapper/BorderedBottomBox";
 
 function Header() {
   return (
-    <Box sx={{
-      borderBottom: `10px solid ${grey[700]}`,
-    }}>
+    <BorderedBottomBox>
       <AppBar
         sx={{
           bgcolor: "transparent",
@@ -224,7 +223,7 @@ function Header() {
           </Container>
         </Container>
       </Box>
-    </Box>
+    </BorderedBottomBox>
   );
 }
 
