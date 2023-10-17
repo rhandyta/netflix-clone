@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Background from "../../../public/__images/backdrop.jpg";
+import Logo from '../../../public/__images/netflix.svg'
 import {
   Box,
   Container,
@@ -8,18 +9,66 @@ import {
   Grid,
   TextField,
   Button,
+  AppBar,
+  Toolbar,
+  FormControl,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { grey } from "@mui/material/colors";
 
 function Header() {
   return (
-    <Box>
+    <Box sx={{borderBottom: `0.7rem solid ${grey[900]}`}}>
+      <AppBar sx={{
+        bgcolor: 'transparent',
+        padding: "25px 20px"
+      }} elevation={0}>
+
+      <Toolbar>
+        <Grid container alignItems="center" spacing={4}>
+          <Grid item xs>
+            <Image 
+              src={Logo}
+              alt="Logo Netflix"
+              layout="intrinsic"
+              width={167}
+              height={45}
+            />
+          </Grid>
+          <Grid item xs="auto">
+          <FormControl color="secondary" size="small" sx={{
+            border: "1px solid grey",
+            borderRadius: "5px",
+          }}>
+            <Select defaultValue="en" sx={{
+              color:"common.white",
+              "& .MuiSelect-select": {
+                width: "10rem"
+              },
+              "& .MuiSelect-icon": {
+                color: "common.white"
+              }
+            }}>
+              <MenuItem value="id">Bahasa Indonesia</MenuItem>
+              <MenuItem value="en">English</MenuItem>
+            </Select>
+          </FormControl>
+          </Grid>
+          <Grid item xs="auto">
+            <Button color="primary" variant="contained" size="large">Sign In</Button>
+          </Grid>
+        </Grid>
+      </Toolbar>
+      </AppBar>
+
       <Box
         sx={{
           position: "relative",
           height: {
             xs: "80vh",
-            sm: "100vh"
+            md: "100vh"
           },
           display: "flex",
           alignItems: "center",
