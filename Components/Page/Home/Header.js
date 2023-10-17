@@ -14,6 +14,7 @@ import {
   FormControl,
   Select,
   MenuItem,
+  FormLabel,
 } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { grey } from "@mui/material/colors";
@@ -29,15 +30,19 @@ function Header() {
         elevation={0}
       >
         <Toolbar>
-          <Grid container alignItems="center" justifyContent="center" alignSelf="center">
+          <Grid
+            container
+            alignItems="center"
+            justifyContent="center"
+            alignSelf="center"
+          >
             <Grid item xs>
               <Box
                 sx={{
                   width: "7.225rem",
                   display: "flex",
-                  alignItems: "center"
+                  alignItems: "center",
                 }}
-                
               >
                 <Image src={Logo} alt="Logo Netflix" layout="intrinsic" />
               </Box>
@@ -52,12 +57,14 @@ function Header() {
                 }}
               >
                 <Select
+                  labelId="lang-label"
+                  id="lang"
                   defaultValue="en"
                   sx={{
                     color: "common.white",
                     "& .MuiSelect-select": {
                       width: {
-                        xs: "5rem",
+                        xs: "1rem",
                         md: "10rem",
                       },
                     },
