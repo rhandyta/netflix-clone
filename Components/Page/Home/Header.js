@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Background from "../../../public/__images/backdrop.jpg";
-import Logo from '../../../public/__images/netflix.svg'
+import Logo from "../../../public/__images/netflix.svg";
 import {
   Box,
   Container,
@@ -20,55 +20,73 @@ import { grey } from "@mui/material/colors";
 
 function Header() {
   return (
-    <Box sx={{borderBottom: `0.7rem solid ${grey[900]}`}}>
-      <AppBar sx={{
-        bgcolor: 'transparent',
-        padding: "25px 20px"
-      }} elevation={0}>
-
-      <Toolbar>
-        <Grid container alignItems="center" spacing={4}>
-          <Grid item xs>
-            <Image 
-              src={Logo}
-              alt="Logo Netflix"
-              layout="intrinsic"
-              width={167}
-              height={45}
-            />
+    <Box sx={{ borderBottom: `0.7rem solid ${grey[900]}` }}>
+      <AppBar
+        sx={{
+          bgcolor: "transparent",
+          padding: "25px 20px",
+        }}
+        elevation={0}
+      >
+        <Toolbar>
+          <Grid container alignItems="center" justifyContent="center" alignSelf="center">
+            <Grid item xs>
+              <Box
+                sx={{
+                  width: "7.225rem",
+                  display: "flex",
+                  alignItems: "center"
+                }}
+                
+              >
+                <Image src={Logo} alt="Logo Netflix" layout="intrinsic" />
+              </Box>
+            </Grid>
+            <Grid item xs="auto" sx={{ mr: "1rem" }}>
+              <FormControl
+                color="secondary"
+                size="small"
+                sx={{
+                  border: "1px solid grey",
+                  borderRadius: "5px",
+                }}
+              >
+                <Select
+                  defaultValue="en"
+                  sx={{
+                    color: "common.white",
+                    "& .MuiSelect-select": {
+                      width: {
+                        xs: "5rem",
+                        md: "10rem",
+                      },
+                    },
+                    "& .MuiSelect-icon": {
+                      color: "common.white",
+                    },
+                  }}
+                >
+                  <MenuItem value="id">Bahasa Indonesia</MenuItem>
+                  <MenuItem value="en">English</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item xs="auto">
+              <Button color="primary" variant="contained" size="large">
+                Sign In
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs="auto">
-          <FormControl color="secondary" size="small" sx={{
-            border: "1px solid grey",
-            borderRadius: "5px",
-          }}>
-            <Select defaultValue="en" sx={{
-              color:"common.white",
-              "& .MuiSelect-select": {
-                width: "10rem"
-              },
-              "& .MuiSelect-icon": {
-                color: "common.white"
-              }
-            }}>
-              <MenuItem value="id">Bahasa Indonesia</MenuItem>
-              <MenuItem value="en">English</MenuItem>
-            </Select>
-          </FormControl>
-          </Grid>
-          <Grid item xs="auto">
-            <Button color="primary" variant="contained" size="large">Sign In</Button>
-          </Grid>
-        </Grid>
-      </Toolbar>
+        </Toolbar>
       </AppBar>
 
       <Box
         sx={{
           position: "relative",
           height: {
-            xs: "80vh",
-            md: "100vh"
+            xs: "100vh",
+            sm: "80vh",
+            md: "100vh",
           },
           display: "flex",
           alignItems: "center",
@@ -121,10 +139,12 @@ function Header() {
             color="common.white"
             textAlign="center"
             fontWeight="400"
-            sx={{ my: {
-              xs: 2,
-              md: 4
-            } }}
+            sx={{
+              my: {
+                xs: 2,
+                md: 4,
+              },
+            }}
           >
             Join today. Cancel anytime.
           </Typography>
@@ -134,10 +154,12 @@ function Header() {
             color="common.white"
             textAlign="center"
             fontWeight="400"
-            sx={{ mb: {
-              xs: 2,
-              md: 3
-            } }}
+            sx={{
+              mb: {
+                xs: 2,
+                md: 3,
+              },
+            }}
           >
             Ready to watch? Enter your email to create or restart your
             membership.
@@ -167,15 +189,20 @@ function Header() {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} md="auto" sx={{
-                textAlign: "center",
-                height: {
-                  xs: "4rem",
-                  md: "none"
-                }
-              }}>
+              <Grid
+                item
+                xs={12}
+                md="auto"
+                sx={{
+                  textAlign: "center",
+                  height: {
+                    xs: "4rem",
+                    md: "none",
+                  },
+                }}
+              >
                 <Button
-                sx={{height: "100%"}}
+                  sx={{ height: "100%" }}
                   component="label"
                   size="large"
                   variant="contained"
