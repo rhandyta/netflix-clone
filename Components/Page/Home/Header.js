@@ -14,14 +14,13 @@ import {
   FormControl,
   Select,
   MenuItem,
-  FormLabel,
 } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { grey } from "@mui/material/colors";
+import ButtonSign from "@/Components/ButtonSign";
 
 function Header() {
   return (
-    <Box sx={{ borderBottom: `0.7rem solid ${grey[900]}` }}>
+    <Box>
       <AppBar
         sx={{
           bgcolor: "transparent",
@@ -39,49 +38,47 @@ function Header() {
             <Grid item xs>
               <Box
                 sx={{
-                  width: "7.225rem",
                   display: "flex",
                   alignItems: "center",
+                  width: "7.25rem",
                 }}
               >
                 <Image src={Logo} alt="Logo Netflix" layout="intrinsic" />
               </Box>
             </Grid>
-            <Grid item xs="auto" sx={{ mr: "1rem" }}>
-              <FormControl
-                color="secondary"
-                size="small"
-                sx={{
-                  border: "1px solid grey",
-                  borderRadius: "5px",
-                }}
-              >
-                <Select
-                  labelId="lang-label"
-                  id="lang"
-                  defaultValue="en"
+            <Grid item xs="auto">
+              <Box sx={{ display: "flex", gap: "0.5rem" }}>
+                <FormControl
+                  color="secondary"
+                  size="small"
                   sx={{
-                    color: "common.white",
-                    "& .MuiSelect-select": {
-                      width: {
-                        xs: "1rem",
-                        md: "10rem",
-                      },
-                    },
-                    "& .MuiSelect-icon": {
-                      color: "common.white",
-                    },
+                    border: "1px solid grey",
+                    borderRadius: "5px",
                   }}
                 >
-                  <MenuItem value="id">Bahasa Indonesia</MenuItem>
-                  <MenuItem value="en">English</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item xs="auto">
-              <Button color="primary" variant="contained" size="large">
-                Sign In
-              </Button>
+                  <Select
+                    labelId="lang-label"
+                    id="lang"
+                    defaultValue="en"
+                    sx={{
+                      color: "common.white",
+                      "& .MuiSelect-select": {
+                        width: {
+                          xs: "1rem",
+                          sm: "10rem",
+                        },
+                      },
+                      "& .MuiSelect-icon": {
+                        color: "common.white",
+                      },
+                    }}
+                  >
+                    <MenuItem value="id">Bahasa Indonesia</MenuItem>
+                    <MenuItem value="en">English</MenuItem>
+                  </Select>
+                </FormControl>
+                <ButtonSign />
+              </Box>
             </Grid>
           </Grid>
         </Toolbar>
@@ -92,8 +89,7 @@ function Header() {
           position: "relative",
           height: {
             xs: "100vh",
-            sm: "80vh",
-            md: "100vh",
+            sm: "100vh",
           },
           display: "flex",
           alignItems: "center",
@@ -125,7 +121,7 @@ function Header() {
         />
 
         <Container
-          maxWidth="xl"
+          maxWidth="lg"
           sx={{
             position: "relative",
             zIndex: 1000,
