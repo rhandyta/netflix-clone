@@ -18,5 +18,6 @@ const app = createTheme({
     }
   },
 });
+
 const theme = responsiveFontSizes(app);
 export default theme;
